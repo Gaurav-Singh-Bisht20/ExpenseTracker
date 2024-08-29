@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const trackerSchema = new mongoose.Schema({
-  uniqueLink: { type: String, required: true, unique: true }, // Unique link for the tracker
+  trackerName :{type : String, required : true},
+  uniqueLink : { type : String, required: true, unique: true},
   members: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }], // Array of users in the team
   currentMonthExpenses: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Expense' }], // Expenses for the current month
   history: [
